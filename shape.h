@@ -206,23 +206,61 @@ public:
                 //also, make the range smaller to make planes look thinner (harder
                 // to render though).
                 if (vij_x < .025 && vij_x > -.025) {
-                    //do nothing, be useless, hang out
+                    add_vertex(coords, vij_x, vij_y, vij_z, 0,0,0);
+                    add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);
+                    add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
+
+                    // add triange
+                    add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
+                    add_vertex(coords, vip1jp1_x, vip1jp1_y, vip1jp1_z, 0,0,0);
+                    add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);
+                    
                 }
                 else if (vij_y < 0.025 && vij_y > -0.025){
-                    //keep hangin out dawg
-                }
+                    add_vertex(coords, vij_x, vij_y, vij_z, 0,0,0);
+                    add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);
+                    add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
+
+                    // add triange
+                    add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
+                    add_vertex(coords, vip1jp1_x, vip1jp1_y, vip1jp1_z, 0,0,0);
+                    add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);                }
                 else if (vij_z < 0.025 && vij_z > -0.025){
-                    //keep on chillen
-                }
+                    add_vertex(coords, vij_x, vij_y, vij_z, 0,0,0);
+                    add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);
+                    add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
+
+                    // add triange
+                    add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
+                    add_vertex(coords, vip1jp1_x, vip1jp1_y, vip1jp1_z, 0,0,0);
+                    add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);                }
                 else if (-vij_x + vij_y < .025 && -vij_x + vij_y > -.025){
-                    //keep hangin
-                }
+                    add_vertex(coords, vij_x, vij_y, vij_z, 0,0,0);
+                    add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);
+                    add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
+
+                    // add triange
+                    add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
+                    add_vertex(coords, vip1jp1_x, vip1jp1_y, vip1jp1_z, 0,0,0);
+                    add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);                }
                 else if (-vij_x + vij_z < .025 && -vij_x + vij_z > -.025){
-                    //u know what 2 do
-                }
+                    add_vertex(coords, vij_x, vij_y, vij_z, 0,0,0);
+                    add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);
+                    add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
+
+                    // add triange
+                    add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
+                    add_vertex(coords, vip1jp1_x, vip1jp1_y, vip1jp1_z, 0,0,0);
+                    add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);                }
                 else if (-vij_y + vij_z < .025 && -vij_y + vij_z > -.025){
-                    //just kick back and chill!!
-                }
+                    add_vertex(coords, vij_x, vij_y, vij_z, 0,0,0);
+                    add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);
+                    add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
+
+                    // add triange
+                    add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
+                    add_vertex(coords, vip1jp1_x, vip1jp1_y, vip1jp1_z, 0,0,0);
+                    add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);                }
                 
                 else{
                     add_vertex(coords, vij_x, vij_y, vij_z, r, g, b);

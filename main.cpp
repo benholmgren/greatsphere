@@ -183,6 +183,10 @@ int main(void) {
     //change the first argument to a bigger number for a better image and
     //a smaller number for it to render way faster and look significantly worse
     std::vector<float> myvector = Sphere(200, 1, 1, .2, .4).coords;
+    //std::vector<float> myvector = TorSphere(30, 1, 1, .2, .4).coords;
+    //Torus c(20, .75, .25, 1, .2, .4);
+    
+    
     
     int count = 0;
     float nx;
