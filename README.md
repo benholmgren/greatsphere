@@ -5,9 +5,13 @@ For Dr. Brittany Fasy
 
 Once in root directory, type:
 mkdir build
+
 cd build
+
 cmake ..
+
 make
+
 ./greatsphere
 
 It should take roughly 10 min for the sphere to compile. To make the image look sharper,
