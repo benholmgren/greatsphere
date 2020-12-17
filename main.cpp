@@ -182,7 +182,7 @@ int main(void) {
     std::vector<float> flat;
     //change the first argument to a bigger number for a better image and
     //a smaller number for it to render way faster and look significantly worse
-    std::vector<float> myvector = Sphere(50, 1, 1, .2, .4).coords;
+    std::vector<float> myvector = Sphere(200, 1, 1, .2, .4).coords;
     
     int count = 0;
     float nx;
