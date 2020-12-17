@@ -177,14 +177,26 @@ int main(void) {
         glfwTerminate();
         return -1;
     }
-
-    // create obj
-    std::vector<float> flat;
     //change the first argument to a bigger number for a better image and
     //a smaller number for it to render way faster and look significantly worse
-    std::vector<float> myvector = Sphere(200, 1, 1, .2, .4).coords;
-    //std::vector<float> myvector = TorSphere(30, 1, 1, .2, .4).coords;
-    //Torus c(20, .75, .25, 1, .2, .4);
+    std::vector<float> myvector = Sphere(300, 1, 1, .2, .4).coords;
+    /*
+    std::vector<float> myvector = TorSphere(50, 1, 1, .2, .4).coords;
+    std::vector<float> firstTor = Torus(50, .75, .25, 0, 0, 0).coords;
+    std::vector<float> secTor = Torus(50, .75, 0, 0, 0, 0).coords;
+    myvector.insert(myvector.end(), firstTor.begin(), firstTor.end());
+    myvector.insert(myvector.end(), secTor.begin(), secTor.end());
+     */
+    
+    // create obj
+    std::vector<float> flat;
+    Model mod(
+              flat,
+              Shader("../vert.glsl", "../frag.glsl"));
+    Matrix4 rot;
+    rot.rotate_x(90);
+
+
     
     
     

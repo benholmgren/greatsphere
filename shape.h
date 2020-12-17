@@ -205,7 +205,8 @@ public:
                 //(easy to change these sections to a specific color, etc.
                 //also, make the range smaller to make planes look thinner (harder
                 // to render though).
-                if (vij_x < .025 && vij_x > -.025) {
+                double threshold = 0.025;
+                if (vij_x < threshold && vij_x > -threshold) {
                     add_vertex(coords, vij_x, vij_y, vij_z, 0,0,0);
                     add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);
                     add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
@@ -216,7 +217,7 @@ public:
                     add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);
                     
                 }
-                else if (vij_y < 0.025 && vij_y > -0.025){
+                else if (vij_y < threshold && vij_y > -threshold){
                     add_vertex(coords, vij_x, vij_y, vij_z, 0,0,0);
                     add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);
                     add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
@@ -225,7 +226,7 @@ public:
                     add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
                     add_vertex(coords, vip1jp1_x, vip1jp1_y, vip1jp1_z, 0,0,0);
                     add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);                }
-                else if (vij_z < 0.025 && vij_z > -0.025){
+                else if (vij_z < threshold && vij_z > -threshold){
                     add_vertex(coords, vij_x, vij_y, vij_z, 0,0,0);
                     add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);
                     add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
@@ -234,7 +235,7 @@ public:
                     add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
                     add_vertex(coords, vip1jp1_x, vip1jp1_y, vip1jp1_z, 0,0,0);
                     add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);                }
-                else if (-vij_x + vij_y < .025 && -vij_x + vij_y > -.025){
+                else if (-vij_x + vij_y < threshold && -vij_x + vij_y > -threshold){
                     add_vertex(coords, vij_x, vij_y, vij_z, 0,0,0);
                     add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);
                     add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
@@ -243,7 +244,7 @@ public:
                     add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
                     add_vertex(coords, vip1jp1_x, vip1jp1_y, vip1jp1_z, 0,0,0);
                     add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);                }
-                else if (-vij_x + vij_z < .025 && -vij_x + vij_z > -.025){
+                else if (-vij_x + vij_z < threshold && -vij_x + vij_z > -threshold){
                     add_vertex(coords, vij_x, vij_y, vij_z, 0,0,0);
                     add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);
                     add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
@@ -252,7 +253,7 @@ public:
                     add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
                     add_vertex(coords, vip1jp1_x, vip1jp1_y, vip1jp1_z, 0,0,0);
                     add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);                }
-                else if (-vij_y + vij_z < .025 && -vij_y + vij_z > -.025){
+                else if (-vij_y + vij_z < threshold && -vij_y + vij_z > -threshold){
                     add_vertex(coords, vij_x, vij_y, vij_z, 0,0,0);
                     add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);
                     add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, 0,0,0);
@@ -263,6 +264,8 @@ public:
                     add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, 0,0,0);                }
                 
                 else{
+                    /*
+                     j chill
                     add_vertex(coords, vij_x, vij_y, vij_z, r, g, b);
                     add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, r, g, b);
                     add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, r, g, b);
@@ -271,7 +274,73 @@ public:
                     add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, r, g, b);
                     add_vertex(coords, vip1jp1_x, vip1jp1_y, vip1jp1_z, r, g, b);
                     add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, r, g, b);
+                     */
                 }
+            }
+        }
+    }
+};
+
+class TorSphere {
+    double x(float r, float phi, float theta){
+        return r*cos(theta)*sin(phi);
+    }
+
+    double y(float r, float phi, float theta){
+        return r*sin(theta)*sin(phi);
+    }
+
+    double z(float r, float phi, float theta){
+        return r*cos(phi);
+    }
+    
+public:
+    std::vector<float> coords;
+    TorSphere(unsigned int n, float radius, float r, float g, float b) {
+        int n_steps = (n%2==0) ? n : n+1;
+        double step_size = 2*M_PI / n_steps;
+
+        for (int i = 0; i < n_steps/2.0; ++i) {
+            for (int j = 0; j < n_steps; ++j) {
+                double phi_i = i*step_size;
+                double phi_ip1 = ((i+1)%n_steps)*step_size;
+                double theta_j = j*step_size;
+                double theta_jp1 = ((j+1)%n_steps)*step_size;
+
+                // vertex i,j
+                double vij_x = x(radius, phi_i, theta_j);
+                double vij_y = y(radius, phi_i, theta_j);
+                double vij_z = z(radius, phi_i, theta_j);
+
+                // vertex i+1,j
+                double vip1j_x = x(radius, phi_ip1, theta_j);
+                double vip1j_y = y(radius, phi_ip1, theta_j);
+                double vip1j_z = z(radius, phi_ip1, theta_j);
+
+                // vertex i,j+1
+                double vijp1_x = x(radius, phi_i, theta_jp1);
+                double vijp1_y = y(radius, phi_i, theta_jp1);
+                double vijp1_z = z(radius, phi_i, theta_jp1);
+
+                // vertex i+1,j+1
+                double vip1jp1_x = x(radius, phi_ip1, theta_jp1);
+                double vip1jp1_y = y(radius, phi_ip1, theta_jp1);
+                double vip1jp1_z = z(radius, phi_ip1, theta_jp1);
+                //1,0,0  0,1,0  0,0,1  0,0,0
+                //normals:
+                //1,0,0  0,1,0  0,0,1  -1,1,0  -1,0,1  0,-1,1
+                //leave sections empty if they intersect any of these planes
+                //(easy to change these sections to a specific color, etc.
+                //also, make the range smaller to make planes look thinner (harder
+                // to render though).
+                add_vertex(coords, vij_x, vij_y, vij_z, r, g, b);
+                add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, r, g, b);
+                add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, r, g, b);
+
+                // add triange
+                add_vertex(coords, vijp1_x, vijp1_y, vijp1_z, r, g, b);
+                add_vertex(coords, vip1jp1_x, vip1jp1_y, vip1jp1_z, r, g, b);
+                add_vertex(coords, vip1j_x, vip1j_y, vip1j_z, r, g, b);
             }
         }
     }
